@@ -20,7 +20,7 @@ if __name__ == "__main__":
     import sys
 
     QCoreApplication.setOrganizationName("Denisov")
-    QCoreApplication.setApplicationName("CMP")
+    QCoreApplication.setApplicationName("CDV")
     QSettings.setDefaultFormat(QSettings.IniFormat)
 
     app = QApplication(sys.argv)
@@ -31,28 +31,29 @@ if __name__ == "__main__":
     
     data_source = None
 
-    if bpm_name_parsed == "model":
-        from datasources import BPMData
-        data_source = BPMData()
+    if bpm_name_parsed == "model_all":
+        from datasources_all import BPMDataAll
+        data_source = BPMDataAll(bpm_name=bpm_name_parsed)
+
 
     elif bpm_name_parsed == "all":
         from datasources_all import BPMDataAll
-        data_source = BPMDataAll()
+        data_source = BPMDataAll(bpm_name=bpm_name_parsed)
 
     else:
-        from datasources_bpm import BPMData
-        data_source = BPMData(bpm_name=bpm_name_parsed)
+        from datasources_all import BPMDataAll
+        data_source = BPMDataAll(bpm_name="model_all")
 
     if data_source is None:
         print("Data source doesn't exists!!! You can't use this program!!!")
         exit()
 
-    data_proc_X = DataProcessor("X")
-    data_proc_Z = DataProcessor("Z")
+    data_proc = DataProcessor()
+    #data_proc_Z = DataProcessor("Z")
     settingsControl = SettingsControl()
 
     mw = MainWindow(data_source, data_proc_X, data_proc_Z, settingsControl, bpm_name_parsed)
-    mw.setWindowTitle('CMP ({})'.format('all'))
+    mw.setWindowTitle('CDV ({})'.format('all'))
 
     icon_path = os.path.dirname(os.path.abspath(__file__))
     mw_icon = QIcon()
@@ -68,8 +69,8 @@ if __name__ == "__main__":
     data_proc_Z.data_processed.connect(mw.on_freq_status_Z)
 
     settingsControl.add_object(mw)
-    settingsControl.add_object(mw.controlWidgetX)
-    settingsControl.add_object(mw.controlWidgetZ)
+    #settingsControl.add_object(mw.controlWidgetX)
+    #settingsControl.add_object(mw.controlWidgetZ)
     settingsControl.add_object(data_source)
     settingsControl.read_settings()
 
@@ -79,8 +80,8 @@ if __name__ == "__main__":
     data_proc_Z.data_processed.connect(mw.on_phase_status)
     data_proc_X.data_processed.connect(mw.on_current_status)
 
-    mw.controlWidgetX.signature.connect(data_source.force_data_ready)
-    mw.controlWidgetZ.signature.connect(data_source.force_data_ready)
+    # mw.controlWidgetX.signature.connect(data_source.force_data_ready)
+    # mw.controlWidgetZ.signature.connect(data_source.force_data_ready)
 
     mw.show()
     sys.exit(app.exec_())

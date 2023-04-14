@@ -16,40 +16,42 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         ui_path = os.path.dirname(os.path.abspath(__file__))
-        self.ui = uic.loadUi(os.path.join(ui_path, 'MainWindow.ui'), self)
+        self.ui = uic.loadUi(os.path.join(ui_path, 'MainWindow_1.ui'), self)
 
-        self.window_str = "None"
+        # self.window_str = "None"
         self.bpm = bpm_name
 
         self.images_list = []
-        self.x_rect = None
-        self.fx_rect = None
-        self.z_rect = None
-        self.fz_rect = None
+        # self.I_rect = None
+        # self.fx_rect = None
+        # self.z_rect = None
+        # self.fz_rect = None
 
         self.data_source = data_source
-        self.data_proc_X = data_proc_X
-        self.data_proc_Z = data_proc_Z
+        self.data_proc = data_proc
+        # self.data_proc_X = data_proc_X
+        # self.data_proc_Z = data_proc_Z
         self.settingsControl = settings_control
 
-        self.data_proc_X.data_processed.connect(self.on_data_FX_ready)
-        self.data_proc_Z.data_processed.connect(self.on_data_FZ_ready)
+        self.data_proc.data_processed.connect(self.on_data_ready))
+        # self.data_proc_X.data_processed.connect(self.on_data_FX_ready)
+        # self.data_proc_Z.data_processed.connect(self.on_data_FZ_ready)
 
-        self.controlWidgetX.window_changed_str.connect(self.data_proc_X.on_wind_changed)
-        self.controlWidgetX.groupBox.setTitle("X Controller")
-        self.controlWidgetX.set_str_id("Data_X")
-        self.controlWidgetX.scale_changed_obj.connect(self.on_scale_changing)
+        # self.controlWidgetX.window_changed_str.connect(self.data_proc_X.on_wind_changed)
+        # self.controlWidgetX.groupBox.setTitle("X Controller")
+        # self.controlWidgetX.set_str_id("Data_X")
+        # self.controlWidgetX.scale_changed_obj.connect(self.on_scale_changing)
 
-        self.controlWidgetZ.window_changed_str.connect(self.data_proc_Z.on_wind_changed)
-        self.controlWidgetZ.groupBox.setTitle("Z Controller")
-        self.controlWidgetZ.set_str_id("Data_Z")
-        self.controlWidgetZ.scale_changed_obj.connect(self.on_scale_changing)
+        # self.controlWidgetZ.window_changed_str.connect(self.data_proc_Z.on_wind_changed)
+        # self.controlWidgetZ.groupBox.setTitle("Z Controller")
+        # self.controlWidgetZ.set_str_id("Data_Z")
+        # self.controlWidgetZ.scale_changed_obj.connect(self.on_scale_changing)
 
-        self.controlWidgetX.method_changed_str.connect(self.data_proc_X.on_method_changed)
-        self.controlWidgetX.boards_changed.connect(self.data_proc_X.on_boards_changed)
+        # self.controlWidgetX.method_changed_str.connect(self.data_proc_X.on_method_changed)
+        # self.controlWidgetX.boards_changed.connect(self.data_proc_X.on_boards_changed)
 
-        self.controlWidgetZ.method_changed_str.connect(self.data_proc_Z.on_method_changed)
-        self.controlWidgetZ.boards_changed.connect(self.data_proc_Z.on_boards_changed)
+        # self.controlWidgetZ.method_changed_str.connect(self.data_proc_Z.on_method_changed)
+        # self.controlWidgetZ.boards_changed.connect(self.data_proc_Z.on_boards_changed)
 
         self.actionSave.triggered.connect(self.on_save_button)
         self.actionRead.triggered.connect(self.on_read_button)

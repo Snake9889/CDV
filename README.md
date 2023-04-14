@@ -1,2 +1,2 @@
-# CMP
-# BINP programm for measuring of current.
+# CDV
+# BINP programm for obtaining the information about current.

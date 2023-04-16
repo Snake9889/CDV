@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     argument_parser = TerminalParser()
     bpm_name_parsed = argument_parser.bpm_name_parsed
-    
+
     data_source = None
 
     if bpm_name_parsed == "model_all":
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     #data_proc_Z = DataProcessor("Z")
     settingsControl = SettingsControl()
 
-    mw = MainWindow(data_source, data_proc_X, data_proc_Z, settingsControl, bpm_name_parsed)
+    mw = MainWindow(data_source, data_proc, settingsControl, bpm_name_parsed)
     mw.setWindowTitle('CDV ({})'.format('all'))
 
     icon_path = os.path.dirname(os.path.abspath(__file__))
@@ -62,11 +62,11 @@ if __name__ == "__main__":
 
     data_source.data_ready.connect(mw.on_data_ready)
     data_source.data_ready.connect(mw.on_current_ready)
-    data_source.data_ready.connect(data_proc_X.on_data_recv)
-    data_source.data_ready.connect(data_proc_Z.on_data_recv)
+    data_source.data_ready.connect(data_proc.on_data_recv)
+    # data_source.data_ready.connect(data_proc_Z.on_data_recv)
 
-    data_proc_X.data_processed.connect(mw.on_freq_status_X)
-    data_proc_Z.data_processed.connect(mw.on_freq_status_Z)
+    # data_proc_X.data_processed.connect(mw.on_freq_status_X)
+    # data_proc_Z.data_processed.connect(mw.on_freq_status_Z)
 
     settingsControl.add_object(mw)
     #settingsControl.add_object(mw.controlWidgetX)
@@ -74,11 +74,11 @@ if __name__ == "__main__":
     settingsControl.add_object(data_source)
     settingsControl.read_settings()
 
-    data_proc_X.data_processed.connect(mw.on_freq_status_X)
-    data_proc_Z.data_processed.connect(mw.on_freq_status_Z)
-    data_proc_X.data_processed.connect(mw.on_phase_status)
-    data_proc_Z.data_processed.connect(mw.on_phase_status)
-    data_proc_X.data_processed.connect(mw.on_current_status)
+    # data_proc_X.data_processed.connect(mw.on_freq_status_X)
+    # data_proc_Z.data_processed.connect(mw.on_freq_status_Z)
+    # data_proc_X.data_processed.connect(mw.on_phase_status)
+    # data_proc_Z.data_processed.connect(mw.on_phase_status)
+    data_proc.data_processed.connect(mw.on_current_status)
 
     # mw.controlWidgetX.signature.connect(data_source.force_data_ready)
     # mw.controlWidgetZ.signature.connect(data_source.force_data_ready)

@@ -6,7 +6,7 @@ import pycx4.qcda as cda
 from BPM_template import BPMTemplate
 from datasources_bpm import BPMData
 import datasources
-from statuswidget import StatusWidget
+#from statuswidget import StatusWidget
 
 class BPMDataAll(BPMTemplate):
     """   """
@@ -32,18 +32,18 @@ class BPMDataAll(BPMTemplate):
         self.timer.timeout.connect(self.on_timer_update)
         self.def_time = self.DEFAULT_TIME
 
-        self.statusWidget = StatusWidget()
-        self.no_data(self.statusWidget.status_1)
-        self.no_data(self.statusWidget.status_2)
-        self.no_data(self.statusWidget.status_3)
-        self.no_data(self.statusWidget.status_4)
+        # self.statusWidget = StatusWidget()
+        # self.no_data(self.statusWidget.status_1)
+        # self.no_data(self.statusWidget.status_2)
+        # self.no_data(self.statusWidget.status_3)
+        # self.no_data(self.statusWidget.status_4)
 
-        if bpm_name = 'bpm_all':
+        if bpm_name == 'bpm_all':
             self.BPM1 = BPMData("bpm01")
             self.BPM2 = BPMData("bpm02")
             self.BPM3 = BPMData("bpm03")
             self.BPM4 = BPMData("bpm04")
-        elif bpm_name = 'model_all':
+        elif bpm_name == 'model_all':
             self.BPM1 = datasources.BPMData("model")
             self.BPM2 = datasources.BPMData("model")
             self.BPM3 = datasources.BPMData("model")
@@ -54,7 +54,7 @@ class BPMDataAll(BPMTemplate):
             self.BPM3 = datasources.BPMData("model")
             self.BPM4 = datasources.BPMData("model")
 
-        self.statusWidget.particles_type.currentIndexChanged.connect(self.on_particles_checked)
+       # self.statusWidget.particles_type.currentIndexChanged.connect(self.on_particles_checked)
 
         self.BPM1.data_ready.connect(self.on_data_ready)
         self.BPM2.data_ready.connect(self.on_data_ready)
@@ -105,7 +105,7 @@ class BPMDataAll(BPMTemplate):
             pass
 
         if (self.hash[0], self.hash[1], self.hash[2], self.hash[3]) == self.control:
-            self.everyting_ok(self.statusWidget.status_1)
+            # self.everyting_ok(self.statusWidget.status_1)
             self.len_check()
 
     def len_check(self):
@@ -113,37 +113,37 @@ class BPMDataAll(BPMTemplate):
         self.l = [len(self.BPM1.dataT), len(self.BPM2.dataT), len(self.BPM3.dataT), len(self.BPM4.dataT)]
 
         if all(self.l[i] == self.l[i+1] for i in range(len(self.l)-1)):
-            self.everyting_ok(self.statusWidget.status_2)
+            # self.everyting_ok(self.statusWidget.status_2)
             self.start_type_check()
 
         else:
             self.hash = [0, 0, 0, 0]
-            self.statusWidget.status_2.setToolTip("Lengths of arrays from BPM-s are different")
-            self.statusWidget.status_2.setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
+            # self.statusWidget.status_2.setToolTip("Lengths of arrays from BPM-s are different")
+            # self.statusWidget.status_2.setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
             pass
 
     def start_type_check(self):
         """   """
         if (self.istart[0], self.istart[1], self.istart[2], self.istart[3]) == self.istart_work:
-            self.everyting_ok(self.statusWidget.status_3)
+            # self.everyting_ok(self.statusWidget.status_3)
             self.reshaping_data()
 
         else:
-            self.statusWidget.status_3.setToolTip("Types of start for diff. BPM's are different")
-            self.statusWidget.status_2.setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
+            # self.statusWidget.status_3.setToolTip("Types of start for diff. BPM's are different")
+            # self.statusWidget.status_2.setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
             pass
 
     def on_timer_update(self):
         """   """
-        if self.hash == [0, 0, 0, 0]:
-            self.no_data(self.statusWidget.status_1)
-            self.statusWidget.status_4.setToolTip("No connection to server")
-            self.statusWidget.status_4.setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
+        # if self.hash == [0, 0, 0, 0]:
+            # self.no_data(self.statusWidget.status_1)
+            # self.statusWidget.status_4.setToolTip("No connection to server")
+            # self.statusWidget.status_4.setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
 
-        else:
-            self.statusWidget.status_1.setToolTip("Some of BPM's send data too frequently or send nothing")
-            self.statusWidget.status_1.setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
-            self.everyting_ok(self.statusWidget.status_4)
+        # else:
+            # self.statusWidget.status_1.setToolTip("Some of BPM's send data too frequently or send nothing")
+            # self.statusWidget.status_1.setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
+            # self.everyting_ok(self.statusWidget.status_4)
         self.hash = [0, 0, 0, 0]
         self.l = [0, 0, 0, 0]
         pass
@@ -166,7 +166,7 @@ class BPMDataAll(BPMTemplate):
         else:
             pass
 
-        self.everyting_ok(self.statusWidget.status_4)
+        # self.everyting_ok(self.statusWidget.status_4)
         self.data_ready.emit(self)
         self.hash = [0, 0, 0, 0]
 
@@ -198,7 +198,7 @@ class BPMDataAll(BPMTemplate):
         self.particles = settings.value("particles", "e-")
         settings.endGroup()
 
-        self.statusWidget.particles_type.setCurrentText(self.particles)
+        # self.statusWidget.particles_type.setCurrentText(self.particles)
 
     def save_settings(self):
         """   """

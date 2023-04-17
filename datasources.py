@@ -26,6 +26,8 @@ class BPMData(BPMTemplate):
         self.n_amp = 0.1
         self.bn_amp = 0.25
 
+        self.istart = 1
+
         self.dataX = None
         self.dataZ = None
         self.dataI = None

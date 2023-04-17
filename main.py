@@ -60,28 +60,13 @@ if __name__ == "__main__":
     mw_icon.addFile(os.path.join(icon_path, 'etc/icons/app_icon.png'), QSize(32, 32))
     mw.setWindowIcon(mw_icon)
 
-    data_source.data_ready.connect(mw.on_data_ready)
     data_source.data_ready.connect(mw.on_current_ready)
     data_source.data_ready.connect(data_proc.on_data_recv)
-    # data_source.data_ready.connect(data_proc_Z.on_data_recv)
-
-    # data_proc_X.data_processed.connect(mw.on_freq_status_X)
-    # data_proc_Z.data_processed.connect(mw.on_freq_status_Z)
 
     settingsControl.add_object(mw)
-    #settingsControl.add_object(mw.controlWidgetX)
-    #settingsControl.add_object(mw.controlWidgetZ)
-    settingsControl.add_object(data_source)
     settingsControl.read_settings()
 
-    # data_proc_X.data_processed.connect(mw.on_freq_status_X)
-    # data_proc_Z.data_processed.connect(mw.on_freq_status_Z)
-    # data_proc_X.data_processed.connect(mw.on_phase_status)
-    # data_proc_Z.data_processed.connect(mw.on_phase_status)
     data_proc.data_processed.connect(mw.on_current_status)
-
-    # mw.controlWidgetX.signature.connect(data_source.force_data_ready)
-    # mw.controlWidgetZ.signature.connect(data_source.force_data_ready)
 
     mw.show()
     sys.exit(app.exec_())

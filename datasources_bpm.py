@@ -21,8 +21,6 @@ class BPMData(BPMTemplate):
         elif bpm_name == "bpm04": bpm_channel = 4
         else:                     bpm_channel = 4
 
-        #self.bpm_name = bpm_name
-
         bpm_data_name = '{0}{1}{2}'.format(self.bpm_channel_template, bpm_channel, "@s")
         bpm_numpts_name = '{0}{1}{2}'.format(self.bpm_channel_template, bpm_channel, "@p10")
         bpm_istart_name = '{0}{1}{2}'.format(self.bpm_channel_template, bpm_channel, "@p2") #1 - run mode, 0 - kick mode

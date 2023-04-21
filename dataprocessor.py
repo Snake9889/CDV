@@ -30,13 +30,13 @@ class DataProcessor(QObject):
         self.bpm_name = None
 
         self.warning = 0
-        self.warningText = ""
+        self.warning_text = ""
 
     def on_data_recv(self, data_source):
         """   """
         self.data_len = data_source.data_len
         self.istart = data_source.istart
-        self.bpm_name = data_source.bpm_name_local
+        self.bpm_name = data_source.bpm_name
 
         self.dataT = data_source.data_bpm[:, 0]
         self.dataX = data_source.data_bpm[:, 1]

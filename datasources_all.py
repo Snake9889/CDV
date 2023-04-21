@@ -32,15 +32,15 @@ class BPMDataAll(BPMTemplate):
             self.BPM3 = BPMData("bpm03")
             self.BPM4 = BPMData("bpm04")
         elif bpm_name == 'model_all':
-            self.BPM1 = datasources.BPMData("model")
-            self.BPM2 = datasources.BPMData("model")
-            self.BPM3 = datasources.BPMData("model")
-            self.BPM4 = datasources.BPMData("model")
+            self.BPM1 = datasources.BPMData("model_1")
+            self.BPM2 = datasources.BPMData("model_2")
+            self.BPM3 = datasources.BPMData("model_3")
+            self.BPM4 = datasources.BPMData("model_4")
         else:
-            self.BPM1 = datasources.BPMData("model")
-            self.BPM2 = datasources.BPMData("model")
-            self.BPM3 = datasources.BPMData("model")
-            self.BPM4 = datasources.BPMData("model")
+            self.BPM1 = datasources.BPMData("model_1")
+            self.BPM2 = datasources.BPMData("model_2")
+            self.BPM3 = datasources.BPMData("model_3")
+            self.BPM4 = datasources.BPMData("model_4")
 
         self.BPM1.data_ready.connect(self.on_data_ready)
         self.BPM2.data_ready.connect(self.on_data_ready)
@@ -56,7 +56,7 @@ class BPMDataAll(BPMTemplate):
 
     def reshaping_data(self, BPM):
         """   """
-        self.bpm_name_local = BPM.bpm_name
+        # self.bpm_name_local = BPM.bpm_name
         data_len = len(BPM.dataT)
         data_bpm = self.reshaping_arrays(BPM.dataT, BPM.dataX, BPM.dataZ, BPM.dataI)
         self.data_bpm = data_bpm

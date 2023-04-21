@@ -39,7 +39,7 @@ class BPMData(BPMTemplate):
         self.timer.timeout.connect(self.on_timer_update)
         self.timer.start(self.def_time)
         self.particles = "e+"
-        self.bpm = bpm_name
+        self.bpm_name = bpm_name
 
 
     def on_timer_update(self):

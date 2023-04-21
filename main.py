@@ -60,13 +60,13 @@ if __name__ == "__main__":
     mw_icon.addFile(os.path.join(icon_path, 'etc/icons/app_icon.png'), QSize(32, 32))
     mw.setWindowIcon(mw_icon)
 
-    data_source.data_ready.connect(mw.on_current_ready)
+    data_source.data_ready.connect(mw.on_current_choice)
     data_source.data_ready.connect(data_proc.on_data_recv)
 
     settingsControl.add_object(mw)
     settingsControl.read_settings()
 
-    data_proc.data_processed.connect(mw.on_current_status)
+    data_proc.data_processed.connect(mw.on_widgets_choice)
 
     mw.show()
     sys.exit(app.exec_())

@@ -33,14 +33,12 @@ class BPMData(BPMTemplate):
         self.bpmChan_istart = cda.IChan(bpm_istart_name)
 
         self.bpmChan_numpts.valueMeasured.connect(self._on_numpts_update)
-        print(self.bpmChan_numpts, 'slava')
         self.bpmChan_istart.valueMeasured.connect(self._on_istart_update)
         self.bpmChan.valueMeasured.connect(self._on_signal_update)
 
     def _on_signal_update(self, chan):
         """   """
         self.data = np.frombuffer(chan.val.data, dtype=np.dtype('f4'), count=chan.val.size)
-        print(self.data, chan.val.size)
 
     def _on_numpts_update(self, chan):
         """   """

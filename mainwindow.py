@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
 
         self.images_list = []
         self.I_rect = None
-        
+
         self.bpm01_dict = {'plot': self.ui.plotI, 'pos': self.ui.pos_1, 'status': self.ui.status_1,
                         'I_label': self.ui.i_label_1, 'I_value': self.ui.value_I_1,
                         'X_label': self.ui.x_label_1, 'X_value': self.ui.value_x_1,
@@ -150,9 +150,9 @@ class MainWindow(QMainWindow):
             w_dict['pos'].setText(f'{pos}')
             w_dict['I_label'].setText(f'I<sub>{pos}</sub> = ')
             w_dict['I_value'].setText(f'{i_amp:.3f}')
-            w_dict['X_label'].setText(f'I<sub>{pos}</sub> = ')
+            w_dict['X_label'].setText(f'X<sub>{pos}</sub> = ')
             w_dict['X_value'].setText(f'{x_amp:.3f}')
-            w_dict['Z_label'].setText(f'I<sub>{pos}</sub> = ')
+            w_dict['Z_label'].setText(f'Z<sub>{pos}</sub> = ')
             w_dict['Z_value'].setText(f'{z_amp:.3f}')
             w_dict['delta_label'].setText(f'I<sub>{pos}</sub> - <span style="text-decoration:overline">I</span><sub>{pos-2}</sub> = ')
             w_dict['delta_value'].setText(f'{delta:.3f}')

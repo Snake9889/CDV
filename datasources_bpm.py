@@ -9,16 +9,16 @@ from BPM_template import BPMTemplate
 class BPMData(BPMTemplate):
     """   """
 
-    #bpm_channel_template = "v2cx::hemera:2."
+    # bpm_channel_template = "v2cx::hemera:2."
     bpm_channel_template = "v2cx::hemera:4."
 
     def __init__(self, bpm_name='', parent=None):
         super(BPMData, self).__init__(bpm_name, parent)
 
-        if bpm_name   == "bpm01": bpm_channel = 1
-        elif bpm_name == "bpm02": bpm_channel = 2
-        elif bpm_name == "bpm03": bpm_channel = 3
-        elif bpm_name == "bpm04": bpm_channel = 4
+        if bpm_name   == "bpm01": bpm_channel = 4
+        elif bpm_name == "bpm02": bpm_channel = 5
+        elif bpm_name == "bpm03": bpm_channel = 6
+        elif bpm_name == "bpm04": bpm_channel = 7
         else:                     bpm_channel = 4
 
         bpm_data_name = '{0}{1}{2}'.format(self.bpm_channel_template, bpm_channel, "@s")
@@ -33,13 +33,14 @@ class BPMData(BPMTemplate):
         self.bpmChan_istart = cda.IChan(bpm_istart_name)
 
         self.bpmChan_numpts.valueMeasured.connect(self._on_numpts_update)
-        print(self.bpmChan_numpts)
+        print(self.bpmChan_numpts, 'slava')
         self.bpmChan_istart.valueMeasured.connect(self._on_istart_update)
         self.bpmChan.valueMeasured.connect(self._on_signal_update)
 
     def _on_signal_update(self, chan):
         """   """
         self.data = np.frombuffer(chan.val.data, dtype=np.dtype('f4'), count=chan.val.size)
+        print(self.data, chan.val.size)
 
     def _on_numpts_update(self, chan):
         """   """

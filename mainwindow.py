@@ -59,10 +59,6 @@ class MainWindow(QMainWindow):
         self.help_widget = HelpWidget(os.path.join(ui_path, 'etc/icons/Help_1.png'))
         self.actionHelp.triggered.connect(self.help_widget.show)
 
-        # self.ui.nu_x_label.setText('\u03BD<sub>x</sub> = ')
-        # self.ui.nu_z_label.setText('\u03BD<sub>z</sub> = ')
-        # self.ui.delta_I_label.setText('\u0394I = ')
-
         self.plots_customization()
 
         self.data_curve1 = self.ui.plotI.plot(pen='r', title='Current_plot_BPM1')
@@ -143,10 +139,12 @@ class MainWindow(QMainWindow):
     def on_current_status(self, pos, warning, text, x_amp, z_amp, delta, i_amp, w_dict, status):
         """   """
         if warning == 0:
-            w_dict['status'].setToolTip("Lengths of arrays from BPM-s are different")
             if status == 1:
+                w_dict['status'].setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
+                w_dict['status'].setToolTip("Run regime")
+            else:
                 w_dict['status'].setStyleSheet("QLabel{background-color: green; border: 1px solid black; border-radius: 10px;}")
-            else: w_dict['status'].setStyleSheet("QLabel{background-color: red; border: 1px solid black; border-radius: 10px;}")
+                w_dict['status'].setToolTip("Everything OK")
             w_dict['pos'].setText(f'{pos}')
             w_dict['I_label'].setText(f'I<sub>{pos}</sub> = ')
             w_dict['I_value'].setText(f'{i_amp:.3f}')
@@ -154,7 +152,8 @@ class MainWindow(QMainWindow):
             w_dict['X_value'].setText(f'{x_amp:.3f}')
             w_dict['Z_label'].setText(f'I<sub>{pos}</sub> = ')
             w_dict['Z_value'].setText(f'{z_amp:.3f}')
-            w_dict['delta_label'].setText(f'I<sub>{pos}</sub> - <span style="text-decoration:overline">I</span><sub>{pos-2}</sub> = ')
+            w_dict['delta_label'].setText(f'\u0394 I = ')
+            w_dict['delta_label'].setToolTip(f'I<sub>{pos}</sub> - <span style="text-decoration:overline">I</span><sub>{pos-2}</sub> = ')
             w_dict['delta_value'].setText(f'{delta:.3f}')
         elif warning == 1:
             w_dict['pos'].setText(text)

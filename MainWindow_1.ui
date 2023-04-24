@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>804</width>
+    <width>644</width>
     <height>600</height>
    </rect>
   </property>
@@ -21,6 +21,9 @@
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
@@ -49,11 +52,11 @@
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>200</height>
+          <height>16777215</height>
          </size>
         </property>
         <property name="toolTip">
-         <string>X spectrum</string>
+         <string>I plot</string>
         </property>
        </widget>
       </item>
@@ -71,6 +74,9 @@
               <pointsize>18</pointsize>
              </font>
             </property>
+            <property name="toolTip">
+             <string>Position of injection</string>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 0, 0);</string>
             </property>
@@ -85,7 +91,7 @@
           <item row="1" column="0">
            <widget class="QFrame" name="frame">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -97,194 +103,16 @@
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QGridLayout" name="gridLayout_2">
-             <item row="0" column="0">
-              <layout class="QGridLayout" name="gridLayout_3">
-               <item row="0" column="2">
-                <widget class="QLabel" name="BPM_1_label">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>18</pointsize>
-                  </font>
-                 </property>
-                 <property name="toolTip">
-                  <string>BetaZ-tune</string>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(0, 0, 0);</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BPM01&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="status_1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>50</width>
-                   <height>100</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>DejaVu Sans</family>
-                   <pointsize>18</pointsize>
-                  </font>
-                 </property>
-                 <property name="toolTip">
-                  <string>BetaZ</string>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(0, 0, 0);</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="1" column="0">
-              <widget class="Line" name="line_3">
+             <item row="6" column="0">
+              <widget class="Line" name="line">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
               </widget>
-             </item>
-             <item row="2" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_4">
-               <item>
-                <widget class="QLabel" name="i_label_1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>DejaVu Sans</family>
-                   <pointsize>18</pointsize>
-                  </font>
-                 </property>
-                 <property name="toolTip">
-                  <string>BetaX</string>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(0, 0, 0);</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;32&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="value_I_1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>18</pointsize>
-                  </font>
-                 </property>
-                 <property name="toolTip">
-                  <string>BetaX-tune</string>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(0, 0, 0);</string>
-                 </property>
-                 <property name="text">
-                  <string>0.000</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="3" column="0">
-              <widget class="Line" name="line_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_2">
-               <item>
-                <widget class="QLabel" name="x_label_1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>DejaVu Sans</family>
-                   <pointsize>18</pointsize>
-                  </font>
-                 </property>
-                 <property name="toolTip">
-                  <string>BetaX</string>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(255, 0, 0);</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;X&lt;span style=&quot; vertical-align:sub;&quot;&gt;32&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="value_x_1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>18</pointsize>
-                  </font>
-                 </property>
-                 <property name="toolTip">
-                  <string>BetaX-tune</string>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(255, 0, 0);</string>
-                 </property>
-                 <property name="text">
-                  <string>0.000</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-              </layout>
              </item>
              <item row="5" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout">
-               <item>
+              <layout class="QFormLayout" name="formLayout_10">
+               <item row="0" column="0">
                 <widget class="QLabel" name="z_label_1">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -299,7 +127,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string>Z-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 255);</string>
@@ -309,7 +137,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_z_1">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -323,7 +151,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string>Z-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 255);</string>
@@ -335,16 +163,16 @@
                </item>
               </layout>
              </item>
-             <item row="6" column="0">
-              <widget class="Line" name="line">
+             <item row="3" column="0">
+              <widget class="Line" name="line_2">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
               </widget>
              </item>
              <item row="7" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_3">
-               <item>
+              <layout class="QFormLayout" name="formLayout_9">
+               <item row="0" column="0">
                 <widget class="QLabel" name="delta_label_1">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -359,17 +187,17 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string/>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;32&lt;/span&gt; - &lt;span style=&quot;text-decoration:overline&quot;&gt; I&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;30&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>ΔI = </string>
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="delta_1">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -383,7 +211,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string/>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -395,50 +223,10 @@
                </item>
               </layout>
              </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="1">
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
-           <widget class="QLabel" name="pos_2">
-            <property name="font">
-             <font>
-              <pointsize>18</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(0, 0, 0);</string>
-            </property>
-            <property name="text">
-             <string>0.000</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_5">
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_6">
-               <item>
-                <widget class="QLabel" name="status_2">
+             <item row="4" column="0">
+              <layout class="QFormLayout" name="formLayout_11">
+               <item row="0" column="0">
+                <widget class="QLabel" name="x_label_1">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                    <horstretch>0</horstretch>
@@ -452,7 +240,234 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string>X-magnitude</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;X&lt;span style=&quot; vertical-align:sub;&quot;&gt;32&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="value_x_1">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>X-magnitude value</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(255, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string>0.000</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <widget class="Line" name="line_3">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <layout class="QFormLayout" name="formLayout_12">
+               <item row="0" column="0">
+                <widget class="QLabel" name="i_label_1">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>DejaVu Sans</family>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>I-magnitude</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(0, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;32&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="value_I_1">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>I-magnitude value</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(0, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string>0.000</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="0" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QLabel" name="status_1">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>DejaVu Sans</family>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>Status</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(0, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="BPM_1_label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>BPM-name</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: rgb(0, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;BPM01&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="0" column="0">
+           <widget class="QLabel" name="pos_2">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>Position of injection</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);</string>
+            </property>
+            <property name="text">
+             <string>0.000</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QFrame" name="frame_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="status_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>DejaVu Sans</family>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>Status</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -476,7 +491,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string>BPM-name</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -496,8 +511,8 @@
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_7">
-               <item>
+              <layout class="QFormLayout" name="formLayout_7">
+               <item row="0" column="0">
                 <widget class="QLabel" name="i_label_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -512,7 +527,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX</string>
+                  <string>I-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -522,7 +537,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_I_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -536,7 +551,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX-tune</string>
+                  <string>I-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -559,8 +574,8 @@
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_8">
-               <item>
+              <layout class="QFormLayout" name="formLayout_6">
+               <item row="0" column="0">
                 <widget class="QLabel" name="x_label_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -575,7 +590,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX</string>
+                  <string>X-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(255, 0, 0);</string>
@@ -585,7 +600,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_x_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -599,7 +614,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX-tune</string>
+                  <string>X-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(255, 0, 0);</string>
@@ -615,8 +630,8 @@
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_9">
-               <item>
+              <layout class="QFormLayout" name="formLayout_5">
+               <item row="0" column="0">
                 <widget class="QLabel" name="z_label_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -631,7 +646,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string>Z-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 255);</string>
@@ -641,7 +656,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_z_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -655,7 +670,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string>Z-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 255);</string>
@@ -675,8 +690,8 @@
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_10">
-               <item>
+              <layout class="QFormLayout" name="formLayout_4">
+               <item row="0" column="0">
                 <widget class="QLabel" name="delta_label_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -691,17 +706,17 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string/>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;32&lt;/span&gt; - &lt;span style=&quot;text-decoration:overline&quot;&gt; I&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;30&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>ΔI = </string>
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="delta_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -715,7 +730,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string/>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -741,6 +756,9 @@
               <pointsize>18</pointsize>
              </font>
             </property>
+            <property name="toolTip">
+             <string>Position of injection</string>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 0, 0);</string>
             </property>
@@ -755,7 +773,7 @@
           <item>
            <widget class="QFrame" name="frame_3">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -768,7 +786,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
                <item>
                 <widget class="QLabel" name="status_3">
                  <property name="sizePolicy">
@@ -777,6 +795,12 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>DejaVu Sans</family>
@@ -784,7 +808,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string>Status</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -808,7 +832,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string>BPM-name</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -828,8 +852,8 @@
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_12">
-               <item>
+              <layout class="QFormLayout" name="formLayout_2">
+               <item row="0" column="0">
                 <widget class="QLabel" name="i_label_3">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -844,7 +868,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX</string>
+                  <string>I-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -854,7 +878,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_I_3">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -868,7 +892,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX-tune</string>
+                  <string>I-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -891,8 +915,8 @@
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_13">
-               <item>
+              <layout class="QFormLayout" name="formLayout">
+               <item row="0" column="0">
                 <widget class="QLabel" name="x_label_3">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -907,7 +931,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX</string>
+                  <string>X-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(255, 0, 0);</string>
@@ -917,7 +941,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_x_3">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -931,7 +955,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX-tune</string>
+                  <string>X-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(255, 0, 0);</string>
@@ -963,7 +987,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string>Z-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 255);</string>
@@ -987,7 +1011,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string>Z-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 255);</string>
@@ -1023,13 +1047,13 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string/>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;32&lt;/span&gt; - &lt;span style=&quot;text-decoration:overline&quot;&gt; I&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;30&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>ΔI = </string>
                  </property>
                 </widget>
                </item>
@@ -1047,7 +1071,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string/>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -1073,6 +1097,9 @@
               <pointsize>18</pointsize>
              </font>
             </property>
+            <property name="toolTip">
+             <string>Position of injection</string>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 0, 0);</string>
             </property>
@@ -1087,7 +1114,7 @@
           <item>
            <widget class="QFrame" name="frame_4">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -1100,7 +1127,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_9">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_16">
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
                <item>
                 <widget class="QLabel" name="status_4">
                  <property name="sizePolicy">
@@ -1109,6 +1136,12 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
                  <property name="font">
                   <font>
                    <family>DejaVu Sans</family>
@@ -1116,7 +1149,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string>Status</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -1140,7 +1173,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string>BPM-name</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -1160,8 +1193,8 @@
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_17">
-               <item>
+              <layout class="QFormLayout" name="formLayout_15">
+               <item row="0" column="0">
                 <widget class="QLabel" name="i_label_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1176,7 +1209,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX</string>
+                  <string>I-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -1186,7 +1219,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_I_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1200,7 +1233,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX-tune</string>
+                  <string>I-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -1223,8 +1256,8 @@
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_18">
-               <item>
+              <layout class="QFormLayout" name="formLayout_16">
+               <item row="0" column="0">
                 <widget class="QLabel" name="x_label_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1239,7 +1272,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX</string>
+                  <string>X-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(255, 0, 0);</string>
@@ -1249,7 +1282,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_x_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1263,7 +1296,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaX-tune</string>
+                  <string>X-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(255, 0, 0);</string>
@@ -1279,8 +1312,8 @@
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_19">
-               <item>
+              <layout class="QFormLayout" name="formLayout_17">
+               <item row="0" column="0">
                 <widget class="QLabel" name="z_label_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1295,7 +1328,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string>Z-magnitude</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 255);</string>
@@ -1305,7 +1338,7 @@
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="value_z_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1319,7 +1352,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string>Z-magnitude value</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 255);</string>
@@ -1339,8 +1372,8 @@
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_20">
-               <item>
+              <layout class="QFormLayout" name="formLayout_18">
+               <item row="0" column="0">
                 <widget class="QLabel" name="delta_label_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1355,17 +1388,17 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ</string>
+                  <string/>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
                  </property>
                  <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;I&lt;span style=&quot; vertical-align:sub;&quot;&gt;32&lt;/span&gt; - &lt;span style=&quot;text-decoration:overline&quot;&gt; I&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;30&lt;/span&gt;=&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  <string>ΔI = </string>
                  </property>
                 </widget>
                </item>
-               <item>
+               <item row="0" column="1">
                 <widget class="QLabel" name="delta_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -1379,7 +1412,7 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>BetaZ-tune</string>
+                  <string/>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">color: rgb(0, 0, 0);</string>
@@ -1407,7 +1440,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>804</width>
+     <width>644</width>
      <height>30</height>
     </rect>
    </property>

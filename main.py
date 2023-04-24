@@ -36,7 +36,7 @@ if __name__ == "__main__":
         data_source = BPMDataAll(bpm_name=bpm_name_parsed)
 
 
-    elif bpm_name_parsed == "all":
+    elif bpm_name_parsed == "bpm_all":
         from datasources_all import BPMDataAll
         data_source = BPMDataAll(bpm_name=bpm_name_parsed)
 

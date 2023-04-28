@@ -16,7 +16,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         ui_path = os.path.dirname(os.path.abspath(__file__))
-        self.ui = uic.loadUi(os.path.join(ui_path, 'MainWindow_1.ui'), self)
+        self.ui = uic.loadUi(os.path.join(ui_path, 'MainWindow.ui'), self)
 
         self.bpm = bpm_name
 

@@ -20,7 +20,7 @@ class DataProcessor(QObject):
         self.dataZ = None
         self.dataI = None
         self.current_to_process = None
-        
+
         self.t_zero = 0
         self.delta_I = 0.0
         self.max_I = 0.0
@@ -36,7 +36,7 @@ class DataProcessor(QObject):
         """   """
         self.data_len = data_source.data_len
         self.istart = data_source.istart
-        self.bpm_name = data_source.bpm_name
+        self.bpm_name = data_source.bpm_name_local
 
         self.dataT = data_source.data_bpm[:, 0]
         self.dataX = data_source.data_bpm[:, 1]
@@ -67,6 +67,6 @@ class DataProcessor(QObject):
         pos_X = self.dataX[self.t_zero]
         pos_Z = self.dataZ[self.t_zero]
         return(pos_X, pos_Z)
-        
+
 
 

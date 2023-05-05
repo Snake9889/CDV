@@ -2,7 +2,7 @@
 #
 from PyQt5.QtCore import pyqtSignal, QObject, QTimer, QSettings
 import numpy as np
-#import pycx4.qcda as cda
+import pycx4.qcda as cda
 import os
 from playsound import playsound
 from BPM_template import BPMTemplate
@@ -27,28 +27,43 @@ class BPMDataAll(BPMTemplate):
         self.data_bpm = None
         self.istart = None
         self.bpm_name_local = None
-        
+
+        self.timer_1 = QTimer()
+        self.timer_2 = QTimer()
+        self.timer_3 = QTimer()
+        self.timer_4 = QTimer()
+
         self.sound_path = os.path.dirname(os.path.abspath(__file__))
-        self.music_win = {"bpm01": 'etc\sound\BPM01.mp3',
-                          "bpm02": 'etc\sound\BPM02.mp3',
-                          "bpm03": 'etc\sound\BPM03.mp3',
-                          "bpm04": 'etc\sound\BPM04.mp3',
-                          "model_1": 'etc\sound\Model.mp3',
-                          "model_2": 'etc\sound\Model.mp3',
-                          "model_3": 'etc\sound\Model.mp3',
-                          "model_4": 'etc\sound\Model.mp3'}
-        self.music_lin = {"bpm01": 'etc/sound/BPM01.mp3',
-                          "bpm02": 'etc/sound/BPM02.mp3',
-                          "bpm03": 'etc/sound/BPM03.mp3',
-                          "bpm04": 'etc/sound/BPM04.mp3',
-                          "model_1": 'etc/sound/Model.mp3',
-                          "model_2": 'etc/sound/Model.mp3',
-                          "model_3": 'etc/sound/Model.mp3',
-                          "model_4": 'etc/sound/Model.mp3'}
-        
-        self.def_time = 100000000**2
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.on_sound_played)
+        self.music_win = {"bpm01": 'etc\sound\BPM01_stopped.mp3',
+                          "bpm02": 'etc\sound\BPM02_stopped.mp3',
+                          "bpm03": 'etc\sound\BPM03_stopped.mp3',
+                          "bpm04": 'etc\sound\BPM04_stopped.mp3',
+                          "model_1": 'etc\sound\Model_stopped.mp3',
+                          "model_2": 'etc\sound\Model_stopped.mp3',
+                          "model_3": 'etc\sound\Model_stopped.mp3',
+                          "model_4": 'etc\sound\Model_stopped.mp3'}
+        self.music_lin = {"bpm01": 'etc/sound/BPM01_stopped.mp3',
+                          "bpm02": 'etc/sound/BPM02_stopped.mp3',
+                          "bpm03": 'etc/sound/BPM03_stopped.mp3',
+                          "bpm04": 'etc/sound/BPM04_stopped.mp3',
+                          "model_1": 'etc/sound/Model_stopped.mp3',
+                          "model_2": 'etc/sound/Model_stopped.mp3',
+                          "model_3": 'etc/sound/Model_stopped.mp3',
+                          "model_4": 'etc/sound/Model_stopped.mp3'}
+        self.timers = {"bpm01": self.timer_1,
+                       "model_1": self.timer_1,
+                       "bpm02": self.timer_2,
+                       "model_2": self.timer_2,
+                       "bpm03": self.timer_3,
+                       "model_3": self.timer_3,
+                       "bpm04": self.timer_4,
+                       "model_4": self.timer_4}
+
+        self.def_time = 5000#10000
+        self.timer_1.timeout.connect(self.on_sound_played)
+        self.timer_2.timeout.connect(self.on_sound_played)
+        self.timer_3.timeout.connect(self.on_sound_played)
+        self.timer_4.timeout.connect(self.on_sound_played)
 
         if bpm_name == 'bpm_all':
             self.BPM1 = BPMData("bpm01")
@@ -76,8 +91,9 @@ class BPMDataAll(BPMTemplate):
         print(BPM.bpm_name)
         self.bpm_name_local = BPM.bpm_name
         self.istart = BPM.istart
-        if self.istart == 1:
-            self.timer.start(self.def_time)
+        self.timers[self.bpm_name_local].start(self.def_time)
+        if self.istart == 0:
+            self.timers[self.bpm_name_local].stop()
         self.reshaping_data(BPM)
 
     def reshaping_data(self, BPM):
@@ -98,10 +114,10 @@ class BPMDataAll(BPMTemplate):
             newMass[:, 3] = M4
 
         return(newMass)
-    
+
     def on_sound_played(self):
         """   """
         sound_path = None
-        sound_path = os.path.join(self.sound_path, self.music_win[self.bpm_name_local])
+        sound_path = os.path.join(self.sound_path, self.music_lin[self.bpm_name_local])
         print(sound_path)
         playsound(sound_path)

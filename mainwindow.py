@@ -105,13 +105,13 @@ class MainWindow(QMainWindow):
 
     def on_current_choice(self, data_source):
         """   """
-        if data_source.bpm_name in ('model_1', 'bpm01'):
+        if data_source.bpm_name_local in ('model_1', 'bpm01'):
             self.on_current_ready(data_source.data_bpm, self.data_curve1)
-        elif data_source.bpm_name in ('model_2', 'bpm02'):
+        elif data_source.bpm_name_local in ('model_2', 'bpm02'):
             self.on_current_ready(data_source.data_bpm, self.data_curve2)
-        elif data_source.bpm_name in ('model_3', 'bpm03'):
+        elif data_source.bpm_name_local in ('model_3', 'bpm03'):
             self.on_current_ready(data_source.data_bpm, self.data_curve3)
-        elif data_source.bpm_name in ('model_4', 'bpm04'):
+        elif data_source.bpm_name_local in ('model_4', 'bpm04'):
             self.on_current_ready(data_source.data_bpm, self.data_curve4)
         else: pass
 

@@ -11,7 +11,7 @@ class DataProcessor(QObject):
     data_processed = pyqtSignal(object)
 
     def __init__(self, data_len=1024, parent=None):
-        super(DataProcessor, self).__init__(parent)
+        super().__init__(parent)
 
         self.data_len = data_len
 

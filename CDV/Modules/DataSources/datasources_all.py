@@ -4,9 +4,9 @@ from PyQt5.QtCore import pyqtSignal, QObject, QTimer, QSettings
 import numpy as np
 import pycx4.qcda as cda
 import os
-from BPM_template import BPMTemplate
-from datasources_bpm import BPMData
-import datasources
+from CDV.Modules.DataSources.BPM_template import BPMTemplate
+from CDV.Modules.DataSources.datasources_bpm import BPMData
+import CDV.Modules.DataSources.datasources as ds_model
 
 class BPMDataAll(BPMTemplate):
     """   """
@@ -70,15 +70,15 @@ class BPMDataAll(BPMTemplate):
             self.BPM3 = BPMData("bpm03")
             self.BPM4 = BPMData("bpm04")
         elif bpm_name == 'model_all':
-            self.BPM1 = datasources.BPMData("model_1")
-            self.BPM2 = datasources.BPMData("model_2")
-            self.BPM3 = datasources.BPMData("model_3")
-            self.BPM4 = datasources.BPMData("model_4")
+            self.BPM1 = ds_model.BPMData("model_1")
+            self.BPM2 = ds_model.BPMData("model_2")
+            self.BPM3 = ds_model.BPMData("model_3")
+            self.BPM4 = ds_model.BPMData("model_4")
         else:
-            self.BPM1 = datasources.BPMData("model_1")
-            self.BPM2 = datasources.BPMData("model_2")
-            self.BPM3 = datasources.BPMData("model_3")
-            self.BPM4 = datasources.BPMData("model_4")
+            self.BPM1 = ds_model.BPMData("model_1")
+            self.BPM2 = ds_model.BPMData("model_2")
+            self.BPM3 = ds_model.BPMData("model_3")
+            self.BPM4 = ds_model.BPMData("model_4")
 
         self.BPM1.data_ready.connect(self.on_data_ready)
         self.BPM2.data_ready.connect(self.on_data_ready)

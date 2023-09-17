@@ -1,2 +1,2 @@
 # CDV
-# BINP programm for obtaining the information about current.
+# Programm for obtaining the information about current.
